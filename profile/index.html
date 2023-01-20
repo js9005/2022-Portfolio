@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>임진슬 포트폴리오</title>
+    <link rel="stylesheet" href="./css/jquery.fullpage.min.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+    <script src="https://kit.fontawesome.com/6153027ca5.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="./js/jquery.fullpage.min.js"></script>
+    <script type="text/javascript">
+		$(document).ready(function() {
+            $('#fullpage').fullpage({
+                lockAnchors: $(window).width() < 900 ? true : false,
+				anchors: ['1stPage', '2ndPage', '3rdPage', '4thPage', '5thPage', '6thPage', '7thPage'],
+				sectionsColor: ['#73bbc5', '#fff', '#aadcec', '#73bbc5', '#aadcec', '#73bbc5', '#aadcec'],
+                menu: '#menu',
+				responsiveWidth: 900,
+				afterResponsive: function(isResponsive){
+                    $("#menu li").on('click', function(){
+                        var menuIndex = $(this).index();
+                        var responsiveSection = $("section").eq(menuIndex).offset().top;
+                        $("html").stop().animate({"scrollTop":responsiveSection},'slow');
+                    });
+				}
+			});
+
+            $(window).on("resize",function(){
+                if($(window).width() < 900){
+                    $.fn.fullpage.setLockAnchors(true);
+                }else{
+                    $.fn.fullpage.setLockAnchors(false);
+                };
+            });
+		});
+	</script>
+</head>
+<body>
+    <header>
+        <div class="headerInner">
+            <h1 class="logo" data-menuanchor="1stPage"><a href="#1stPage">임진슬 포트폴리오</a></h1>
+            <div class="menubtn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <nav id="gnb">
+                <h2 class="hidden">Navigation</h2>
+                <ul id="menu">
+                    <li data-menuanchor="1stPage"><h3><a href="#1stPage">HOME</a></h3></li>
+                    <li data-menuanchor="2ndPage"><h3><a href="#2ndPage">PROFILE</a></h3></li>
+                    <li data-menuanchor="3rdPage"><h3><a href="#3rdPage">DESKTOP</a></h3></li>
+                    <li data-menuanchor="4thPage"><h3><a href="#4thPage">MOBILE</a></h3></li>
+                    <li data-menuanchor="5thPage"><h3><a href="#5thPage">RESPONSIVE</a></h3></li>
+                    <li data-menuanchor="6thPage"><h3><a href="#6thPage">BOOTSTRAP</a></h3></li>
+                    <li data-menuanchor="7thPage"><h3><a href="#7thPage">TOY PROJECT</a></h3></li>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <article id="fullpage">
+        <h2 class="hidden">Main Content</h2>
+        <section class="section" id="section1">
+            <h3 class="hidden">Home</h3>
+            <div class="inner">
+                <p class="intro">
+                    안녕하세요,<br>
+                    <strong class="intro-bold">끊임없이 성장하는 개발자<br>임진슬입니다</strong>
+                </p>
+            </div>
+        </section>
+		
+		<section class="section" id="section2">
+            <h3 class="hidden">Profile</h3>
+            <div class="inner">
+                <div class="profile">
+                    <div class="about">
+                        <h4>ABOUT ME</h4>
+                        <div class="about_pic"></div>
+                        <ul class="about_desc">
+                            <li>
+                                <strong>NAME</strong>임진슬
+                            </li>
+                            <li>
+                                <strong>CONTACT</strong>
+                                <span>010-9297-5021</span><span>jseul@gmail.com</span>
+                            </li>
+                        </ul>
+                        <ul class="about_link">
+                            <li><a href="./resume/resume.html" target="_blank" title="새창으로 열림">RESUME</a></li>
+                            <li><a href="./storyboard.pdf" target="_blank" title="새창으로 열림">STORYBOARD</a></li>
+                            <li><a href="http://github.com/jseul9599" target="_blank" title="새창으로 열림">GITHUB</a></li>
+                        </ul>
+                    </div>
+                    <div class="skillset">
+                        <h4>MY SKILLS</h4>
+                        <div class="skill_box">
+                            <ul>
+                                <li><img src="./images/icon_html5.png" alt="HTML5"><span>HTML5</span></li>
+                                <li><img src="./images/icon_css3.png" alt="CSS3"><span>CSS3</span></li>
+                                <li><img src="./images/icon_js.png" alt="JavaScript"><span>JavaScript</span></li>
+                                <li><img src="./images/icon_react.png" alt="React"><span>React</span></li>
+                                <li><img src="./images/icon_jquery.png" alt="jQuery"><span>jQuery</span></li>
+                                <li><img src="./images/icon_git.png" alt="GIT"><span>GIT</span></li>
+                                <li><img src="./images/icon_github.png" alt="GitHub"><span>GitHub</span></li>
+                                <li><img src="./images/icon_sass.png" alt="SASS"><span>SASS</span></li>
+                                <li><img src="./images/icon_php.png" alt="PHP"><span>PHP</span></li>
+                                <li><img src="./images/icon_mysql.png" alt="MySQL"><span>MySQL</span></li>
+                                <li><img src="./images/icon_bootstrap.png" alt="Bootstrap"><span>Bootstrap</span></li>
+                                <li><img src="./images/icon_wordpress.png" alt="WordPress"><span>WordPress</span></li>
+                                <li><img src="./images/icon_photoshop.png" alt="Photoshop"><span>Photoshop</span></li>
+                                <li><img src="./images/icon_jira.png" alt="Jira"><span>Jira</span></li>
+                                <li><img src="./images/icon_confluence.png" alt="Confluence"><span>Confluence</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section fp-auto-height-responsive" id="section3">
+            <div class="inner">
+                <div class="project">
+                    <div class="project_pic">
+                        <img src="./images/project_desktop.gif" alt="desktop project">
+                    </div>
+                    <div class="project_desc">
+                        <h3>롯데정밀화학<span> 기업형 DESKTOP</span></h3>
+                        <ul>
+                            <li>
+                                XHTML로 구현되어 있던 기존 사이트를 HTML5/CSS3를 사용하여 트렌드를 반영한 디자인으로 
+                                새롭게 제작하였습니다. 또한 이미지로 표현되어 있던 텍스트를 모두 변환하고 누락된 alt 속성을 
+                                채워, 웹표준을 준수하고 접근성을 높이는 방식으로 개선하였습니다.
+                            </li>
+                            <li class="pro_time">
+                                <strong>제작기간</strong>약 4주
+                            </li>
+                            <li class="pro_skill">
+                                <strong>제작스킬</strong>
+                                <ul>
+                                    <li><img src="./images/icon_html5.png" alt="HTML5"><span>HTML5</span></li>
+                                    <li><img src="./images/icon_css3.png" alt="CSS3"><span>CSS3</span></li>
+                                    <li><img src="./images/icon_js.png" alt="JavaScript"><span>JavaScript</span></li>
+                                    <li><img src="./images/icon_jquery.png" alt="jQuery"><span>jQuery</span></li>
+                                    <li><img src="./images/icon_php.png" alt="PHP"><span>PHP</span></li>
+                                    <li><img src="./images/icon_mysql.png" alt="MySQL"><span>MySQL</span></li>
+                                    <li><img src="./images/icon_photoshop.png" alt="Photoshop"><span>Photoshop</span></li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <a href="http://seeul.cafe24.com/" target="_blank" title="새창으로 열림" class="visit_btn">Visit Site</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section fp-auto-height-responsive" id="section4">
+            <img src="./images/qr_mobile.png" alt="qr_mobile" class="qrcode">
+            <div class="inner">
+                <div class="project">
+                    <div class="project_pic">
+                        <img src="./images/project_mobile.gif" alt="mobile project">
+                    </div>
+                    <div class="project_desc">
+                        <h3>롯데정밀화학<span> 기업형 MOBILE</span></h3>
+                        <ul>
+                            <li>
+                                Desktop용으로 구현된 롯제정밀화학 웹사이트를 모바일 기기에 적합한 
+                                UI를 적용하여 새롭게 제작한 모바일용 웹입니다. 마우스가 아닌 사용자의 
+                                터치 이벤트를 중점적으로 제작하였습니다.
+                            </li>
+                            <li class="pro_time">
+                                <strong>제작기간</strong>약 2주
+                            </li>
+                            <li class="pro_skill">
+                                <strong>제작스킬</strong>
+                                <ul>
+                                    <li><img src="./images/icon_html5.png" alt="HTML5"><span>HTML5</span></li>
+                                    <li><img src="./images/icon_css3.png" alt="CSS3"><span>CSS3</span></li>
+                                    <li><img src="./images/icon_js.png" alt="JavaScript"><span>JavaScript</span></li>
+                                    <li><img src="./images/icon_jquery.png" alt="jQuery"><span>jQuery</span></li>
+                                    <li><img src="./images/icon_php.png" alt="PHP"><span>PHP</span></li>
+                                    <li><img src="./images/icon_mysql.png" alt="MySQL"><span>MySQL</span></li>
+                                    <li><img src="./images/icon_photoshop.png" alt="Photoshop"><span>Photoshop</span></li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <a href="http://seeul.cafe24.com/mobile" target="_blank" title="새창으로 열림" class="visit_btn">Visit Site</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section fp-auto-height-responsive" id="section5">
+            <img src="./images/qr_responsive.png" alt="qr_responsive" class="qrcode">
+            <div class="inner">
+                <div class="project">
+                    <div class="project_pic">
+                        <img src="./images/project_responsive.gif" alt="responsive project">
+                    </div>
+                    <div class="project_desc">
+                        <h3>The Witcher<span> 반응형 웹사이트</span></h2>
+                        <ul>
+                            <li>
+                                드라마 The Witcher를 주제로 한 사이트로 다양한 디바이스에서 폭넓게 이용할 수 있도록 반응형 웹을 구축하였습니다.
+                            </li>
+                            <li class="pro_time">
+                                <strong>제작기간</strong>약 1주
+                            </li>
+                            <li class="pro_skill">
+                                <strong>제작스킬</strong>
+                                <ul>
+                                    <li><img src="./images/icon_html5.png" alt="HTML5"><span>HTML5</span></li>
+                                    <li><img src="./images/icon_css3.png" alt="CSS3"><span>CSS3</span></li>
+                                    <li><img src="./images/icon_js.png" alt="JavaScript"><span>JavaScript</span></li>
+                                    <li><img src="./images/icon_jquery.png" alt="jQuery"><span>jQuery</span></li>
+                                    <li><img src="./images/icon_photoshop.png" alt="Photoshop"><span>Photoshop</span></li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <a href="http://seeul.cafe24.com/media" target="_blank" title="새창으로 열림" class="visit_btn">Visit Site</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section fp-auto-height-responsive" id="section6">
+            <img src="./images/qr_bootstrap.png" alt="qr_bootstrap" class="qrcode">
+            <div class="inner">
+                <div class="project">
+                    <div class="project_pic">
+                        <img src="./images/project_bootstrap.png" alt="bootstrap project">
+                    </div>
+                    <div class="project_desc">
+                        <h3>Häagen-Dazs<span> Bootstrap 웹사이트</span></h3>
+                        <ul>
+                            <li>
+                                아이스크림 브랜드 하겐다즈를 주제로 부트스랩을 사용하여 다양한 해상도의 디바이스에서 이용할 수 있는 반응형 웹사이트를 제작하였습니다.
+                            </li>
+                            <li class="pro_time">
+                                <strong>제작기간</strong>약 3일
+                            </li>
+                            <li class="pro_skill">
+                                <strong>제작스킬</strong>
+                                <ul>
+                                    <li><img src="./images/icon_bootstrap.png" alt="Bootstrap"><span>Bootstrap</span></li>
+                                    <li><img src="./images/icon_html5.png" alt="HTML5"><span>HTML5</span></li>
+                                    <li><img src="./images/icon_css3.png" alt="CSS3"><span>CSS3</span></li>
+                                    <li><img src="./images/icon_js.png" alt="JavaScript"><span>JavaScript</span></li>
+                                    <li><img src="./images/icon_jquery.png" alt="jQuery"><span>jQuery</span></li>
+                                    <li><img src="./images/icon_photoshop.png" alt="Photoshop"><span>Photoshop</span></li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <a href="http://seeul.cafe24.com/bootstrap" target="_blank" title="새창으로 열림" class="visit_btn">Visit Site</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section fp-auto-height-responsive" id="section7">
+            <div class="inner">
+                <div class="toy_project">
+                    <h3>TOY PROJECT</h3>
+                    <ul>
+                        <li>
+                            <div>
+                                <img src="./images/toy_weatherapp.png" alt="toy Project">
+                                <dl>
+                                    <dt>리액트 날씨앱</dt>
+                                    <dd>Open Weather Map API를 이용한 도시 검색 및 온도 확인 날씨앱</dd>
+                                    <dd>
+                                        <a href="http://github.com/jseul9599/react-weather-app" target="_blank" title="새창으로 열림" class="view_github"><i class="fab fa-github"></i></a>
+                                        <a href="http://seeul.cafe24.com/toy/weatherapp" target="_blank" title="새창으로 열림" class="view_live"><i class="fas fa-external-link-alt"></i></a>
+                                    </dd>
+                                </dl>
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                <img src="./images/toy_memorygame.png" alt="toy Project">
+                                <dl>
+                                    <dt>카드 뒤집기 게임</dt>
+                                    <dd>Vanilla JavaScript로 제작한 카드 뒤집기 게임</dd>
+                                    <dd>
+                                        <a href="http://github.com/jseul9599/memory-game" target="_blank" title="새창으로 열림" class="view_github"><i class="fab fa-github"></i></a>
+                                        <a href="http://seeul.cafe24.com/toy/memorygame" target="_blank" title="새창으로 열림" class="view_live"><i class="fas fa-external-link-alt"></i></a>
+                                    </dd>
+                                </dl>
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                <img src="./images/toy_googlebook.png" alt="toy Project">
+                                <dl>
+                                    <dt>To Read List</dt>
+                                    <dd>Google Books API를 이용한 도서 검색 및 리스트에 추가/삭제</dd>
+                                    <dd>
+                                        <a href="http://github.com/jseul9599/book-finder-and-list" target="_blank" title="새창으로 열림" class="view_github"><i class="fab fa-github"></i></a>
+                                        <a href="http://seeul.cafe24.com/toy/googlebook" target="_blank" title="새창으로 열림" class="view_live"><i class="fas fa-external-link-alt"></i></a>
+                                    </dd>
+                                </dl>
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                <img src="./images/toy_wordpress.png" alt="toy Project">
+                                <dl>
+                                    <dt>Caterpillar 웹사이트</dt>
+                                    <dd>워드프레스를 사용하여 제작한 건설장비 회사 캐터필러 웹사이트</dd>
+                                    <dd>
+                                        <a href="http://seeul.cafe24.com/wordpress" target="_blank" title="새창으로 열림" class="view_live"><i class="fas fa-external-link-alt"></i></a>
+                                    </dd>
+                                </dl>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </article>
+
+    <script src="./js/script.js"></script>
+</body>
+</html>

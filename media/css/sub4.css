@@ -1,0 +1,69 @@
+/* =============== .masonry =============== */
+#content .gallery .center_container h3::before{
+   content: 'THE WITCHER';
+}
+
+.gallery .center_container > p{
+   color: #fff;
+   text-align: center;
+   margin-bottom: 2rem;
+   font-size: 1.25rem;
+}
+
+.grid--images:hover .grid-image-item{
+   filter: brightness(30%);
+}
+
+.grid--images .grid-image-item:hover{
+   filter: brightness(1);
+}
+
+.grid--images .grid-sizer,
+.grid--images .grid-image-item{
+   width: 25%;
+}
+
+.grid--images .grid-image-item{
+   float: left;
+   padding: .5rem .5rem 1rem .5rem;
+   transition: filter .3s;
+}
+
+.grid--images .grid-image-item img{
+   border-radius: 10px;
+}
+
+.grid-image-item p{
+   color: #fff;
+   margin-top: .5rem;
+}
+
+
+
+
+
+/* =============== Media Query =============== */
+/* === Desktop === */
+@media screen and (max-width:1280px) {}
+
+
+/* === Tablet === */
+@media screen and (max-width:1024px) {
+   .grid--images .grid-sizer,
+   .grid--images .grid-image-item{
+      width: 33.3333%;
+   }
+}
+
+
+/* === Tablet_small === */
+@media screen and (max-width:768px) {}
+
+
+/* === Mobile === */
+@media screen and (max-width:640px) {
+   .grid--images .grid-sizer,
+   .grid--images .grid-image-item{
+      width: 50%;
+   }
+}

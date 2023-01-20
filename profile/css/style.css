@@ -1,0 +1,546 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap');
+
+:root{
+    --con-white : #f4f9fc;
+    --con-purple : #7f00e0;
+    --con-blue : #aadcec;
+    --sub-blue: #73bbc5;
+    --font-color : #0f1b61;
+}
+
+
+
+/* =============== CSS Reset =============== */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: var(--font-color);
+}
+
+html, body{
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 16px;
+}
+
+ol, ul{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+    color: var(--font-color);
+}
+
+.hidden{
+    display: block;
+    position: absolute;
+    left: -1000%;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    color: #fff;
+}
+
+
+
+/* =============== header =============== */
+header{
+    position:fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 70px;
+    z-index: 70;
+    backdrop-filter: blur(5px);
+}
+
+header .headerInner{
+    width: 90%;
+    height: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .headerInner .logo{
+    width: 55px;
+    height: 55px;
+}
+
+header .headerInner .logo a{
+    display: block;
+    width: 100%;
+    height: 100%;
+    text-indent: -9999px;
+    overflow: hidden;
+    background: url(../images/logo.png) center/cover;
+}
+
+header .headerInner .menubtn{
+    display: none;
+}
+
+header .headerInner nav ul{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+header .headerInner nav ul li:first-child{
+    display: none;
+}
+
+header .headerInner nav ul li h3 a{
+    display: block;
+    font-size: 1.2rem;
+    font-weight: 700;
+    padding: .35rem .85rem;
+}
+
+header .headerInner nav ul li.active h3 a{
+    color: var(--con-white);
+    text-shadow: 0 0 5px var(--font-color);
+}
+
+
+
+/* =============== .section common =============== */
+.section .inner{
+    width: 90%;
+    max-width: 1600px;
+    margin: 0 auto;
+}
+
+
+
+/* =============== #section1 =============== */
+#section1{
+    height: 100vh;
+}
+
+#section1 .intro{
+    font-size: 3rem;
+    text-align: center;
+}
+
+
+
+/* =============== #section2 =============== */
+#section2 .profile{
+    display: flex;
+    justify-content: center;
+    gap: 5rem;
+}
+
+#section2 .profile div h4{
+    color: var(--sub-blue);
+    font-size: 1.5rem;
+}
+
+#section2 .profile .about{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+#section2 .profile .about .about_pic{
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    border: 5px solid var(--con-blue);
+    background: url(../images/seul.jpg);
+    background-position: top;
+    background-size: cover;
+}
+
+#section2 .profile .about .about_desc li{
+    margin-bottom: .5rem;
+    text-align: center;
+}
+
+#section2 .profile .about .about_desc li strong{
+    color: var(--sub-blue);
+    display: block;
+}
+
+#section2 .profile .about .about_desc li span:last-child::before{
+    content: '/';
+    margin: 0 .5rem;
+    color: var(--con-blue);
+    font-weight: bold;
+}
+
+#section2 .profile .about .about_link{
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+#section2 .profile .about .about_link li a{
+    display: block;
+    color: var(--con-purple);
+    border: 2px solid var(--con-purple);
+    padding: .3rem .85rem;
+    transition: .3s;
+}
+
+#section2 .profile .about .about_link li a:hover{
+    background: var(--con-purple);
+    color: #fff;
+}
+
+#section2 .profile .skillset{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+#section2 .profile .skillset .skill_box ul{
+    display: grid;
+    grid-template-columns: repeat(4, 60px);
+    gap: 1.75rem 1rem;
+}
+
+#section2 .profile .skillset .skill_box ul li{
+    padding: .2rem;
+    height: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#section2 .profile .skillset .skill_box ul li img{
+    width: 55%;
+}
+
+#section2 .profile .skillset .skill_box ul li span{
+    font-size: .7rem;
+    font-weight: 700;
+}
+
+
+
+/* =============== #section3 ~ #section6 =============== */
+#section4,
+#section5,
+#section6{
+    position: relative;
+}
+
+.section .qrcode{
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem;
+    width: 100px;
+}
+
+.section .project{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.section .project .project_pic{
+    width: 55%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.section .project .project_pic img{
+    width: 80%;
+}
+
+.section .project .project_desc{
+    width: 45%;
+}
+
+.section .project .project_desc h3{
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.section .project .project_desc h3 span{
+    font-size: 1rem;
+    font-weight: 400;
+    color: var(--con-white);
+}
+
+.section .project .project_desc > ul > li{
+    margin-bottom: 1.25rem;
+}
+
+.section .project .project_desc ul .pro_time strong,
+.section .project .project_desc ul .pro_skill strong{
+    display: block;
+}
+
+.section .project .project_desc ul .pro_skill ul{
+    margin-top: .85rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.section .project .project_desc ul .pro_skill ul li{
+    background: rgba(255, 255, 255, .2);
+    box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+    border-radius: 7px;
+    width: 60px;
+    height: 60px;
+    padding: .2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.section .project .project_desc ul .pro_skill ul li img{
+    width: 55%;
+}
+
+.section .project .project_desc ul .pro_skill ul li span{
+    font-size: .5rem;
+    font-weight: 700;
+}
+
+.section .project .project_desc .visit_btn{
+    margin-top: 2rem;
+    display: block;
+    width: 180px;
+    padding: .65rem 0;
+    text-align: center;
+    font-weight: 700;
+    color: var(--con-purple);
+    border: 2px solid var(--con-purple);
+    transition: .3s;
+}
+
+.section .project .project_desc .visit_btn:hover{
+    background: var(--con-purple);
+    color: var(--con-white);
+}
+
+
+
+/* =============== #section7 =============== */
+#section7 .toy_project h3{
+    text-align: center;
+    margin-bottom: 3rem;
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+
+#section7 .toy_project ul{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#section7 .toy_project ul li{
+    width: 25%;
+    padding: .5rem;
+}
+
+#section7 .toy_project ul li div{
+    background: rgba(255, 255, 255, .75);
+    border-radius: 10px;
+    padding: 1rem;
+}
+
+#section7 .toy_project ul li div img{
+    width: 100%;
+}
+
+#section7 .toy_project ul li div dl{
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+    text-align: center;
+}
+
+#section7 .toy_project ul li div dl dt{
+    font-weight: 700;
+}
+
+#section7 .toy_project ul li div dl dd:nth-child(2){
+    height: 60px;
+    font-size: .85rem;
+}
+
+#section7 .toy_project ul li div dl dd a{
+    display: inline-block;
+    border: 2px solid var(--con-purple);
+    border-radius: 5px;
+    padding: 0 .5rem;
+    margin: 0 .5rem;
+    transition: .3s;
+}
+
+#section7 .toy_project ul li div dl dd a i{
+    color: var(--con-purple);
+}
+
+#section7 .toy_project ul li div dl dd a:hover{
+    background: var(--con-purple);
+}
+
+#section7 .toy_project ul li div dl dd a:hover i{
+    color: #fff;
+}
+
+
+
+
+
+/* =============== Media Query =============== */
+@media screen and (max-width:1100px) {
+    header .headerInner{
+        width: 95%;
+    }
+
+    header .headerInner .logo{
+        width: 50px;
+        height: 50px;
+    }
+
+    header .headerInner nav ul{
+        gap: 5px;
+    }
+
+    .section .project .project_desc h3{
+        font-size: 2rem;
+    }
+
+    #section7 .toy_project h3{
+        font-size: 2rem;
+    }
+}
+
+
+@media screen and (max-width:899px) {
+    header{
+        backdrop-filter: blur(20px);
+    }
+
+    header .headerInner .menubtn{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 50px;
+        height: 45px;
+        padding: .5rem;
+        cursor: pointer;
+        z-index: 100;
+    }
+
+    header .headerInner .menubtn span{
+        width: 100%;
+        height: 3px;
+        background: var(--font-color);
+    }
+
+    header .headerInner nav{
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 50%;
+        height: 100vh;
+        transition: .3s;
+        background: #d8d4e4;
+    }
+
+    header .headerInner nav.menu-active{
+        right: 0;
+    }
+
+    header .headerInner nav ul{
+        flex-direction: column;
+        align-items: center;
+        padding: 1rem;
+    }
+
+    header .headerInner nav ul li{
+        width: 100%;
+        text-align: center;
+    }
+
+    header .headerInner nav ul li:first-child{
+        display: block;
+    }
+
+    header .headerInner nav ul li h3 a{
+        font-size: 1.3rem;
+    }
+
+    #section1 .intro{
+        font-size: 2.25rem;
+    }
+
+    #section2,
+    #section3,
+    #section4,
+    #section5,
+    #section6,
+    #section7{
+        padding: 85px 0;
+    }
+
+    #section2 .profile{
+        flex-direction: column;
+    }
+
+    .section .qrcode{
+        display: none;
+    }
+
+    .section .project{
+        flex-direction: column;
+    }
+    
+    .section .project .project_pic{
+        width: 100%;
+    }
+
+    .section .project .project_desc{
+        width: 100%;
+        margin-top: 1rem;
+    }
+
+    #section7 .toy_project ul li{
+        width: 50%;
+    }
+}
+
+
+@media screen and (max-width:480px) {
+    header .headerInner nav{
+        width: 70%;
+    }
+
+    #section1 .intro{
+        font-size: 1.5rem;
+    }
+
+    #section2 .profile .about .about_link{
+        gap: .5rem;
+    }
+
+    #section2 .profile .about .about_link li a{
+        padding: .3rem .5rem;
+    }
+
+    .section .project .project_desc h3 span{
+        display: block;
+    }
+
+    #section7 .toy_project ul li{
+        width: 100%;
+    }
+}
